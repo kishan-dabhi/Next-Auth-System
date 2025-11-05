@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 export default function ChangePassword() {
   const router = useRouter();
   const { register, handleSubmit } = useForm<{ email: string; newPassword: string }>();
-
   const onSubmit = async (data: { email: string; newPassword: string }) => {
     try {
       const res = await axios.post("/auth/change-password", data);
